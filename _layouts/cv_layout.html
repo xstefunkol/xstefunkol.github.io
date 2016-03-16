@@ -1,8 +1,26 @@
----
-layout: default
----
-<h1>{{ page.title }}</h1>
-
-<div class="personal_information">
-  {{ content }}
-</div>
+<!DOCTYPE html>
+	<html>
+		<head>
+			<title>{{ page.title }}</title>
+			<link rel="stylesheet" type="text/css" href="/css/second.css">
+		</head>
+		<body>
+			<div class="navigation">
+	    		<ul>
+					{% for page in site.pages %}
+						<li><a href="{{ page.url }}" title="{{ page.title }}">{{ page.title }}</a></li>
+					{% endfor %}	
+	    		</ul>
+			</div>
+			<div class="container">
+			<h1>{{ page.title }}</h1>
+			{{ content }}
+			
+			</div>
+			<footer>
+	    		<ul>
+	        		<li><a href="https://github.com/xstefunkol">github.com/xstefunkol</a></li>
+				</ul>
+			</footer>
+		</body>
+	</html>
